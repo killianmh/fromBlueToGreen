@@ -226,6 +226,7 @@ main.overlay .mobile-overlay {
     color: #f4edea;
   }
   .header .desktop .icon i {
+    color: #3d6eb0;
     font-size: 70px;
   }
   .header .desktop .menu {
@@ -238,7 +239,7 @@ main.overlay .mobile-overlay {
     padding: 0;
   }
   .header .desktop .nav {
-    margin: 0 17px;
+    margin: 0 30px;
   }
   .header .desktop .nav a {
     position: relative;
