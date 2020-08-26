@@ -15,7 +15,7 @@
 /* box-sizing */
 html {
   box-sizing: border-box;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 *, *:before, *:after {
   box-sizing: inherit;
