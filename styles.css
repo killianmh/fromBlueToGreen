@@ -1,0 +1,218 @@
+/* Color Palette 
+  blue: color: #3d6eb0;
+  green: color: #5da399;
+  white: color: #f4edea;
+  darkpurple: color: #22031f;
+*/
+
+/* Google Fonts 
+  font-family: 'Assistant', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+*/
+
+/* --------------------- Standard Styles ------------------- */
+
+/* box-sizing */
+html {
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #22031f;
+  background-color: #f4edea;
+  overflow-x: hidden;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: #3d6eb0;
+}
+a::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  background-color: #5da399;
+  opacity: .7;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+a:hover::after {
+  transform: scaleY(1);
+  transition: transform 0.3s;
+}
+
+button {
+  display: block;
+  border: none;
+  background: none;
+  padding: 0 20px;
+}
+button:hover {
+  cursor: pointer;
+}
+
+/* Headings */
+h1, h2, h3 {
+  margin-top: 0.2em;
+  font-family: 'Assistant', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+h1 {
+  display: inline-block;
+  background: linear-gradient(to right, #3d6eb0, #5da399);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: #5da399;
+  font-size: 100px;
+}
+h2 {
+  color: #5da399;
+  font-weight: 400;
+  font-size: 75px;
+}
+h3 {
+  color: #3d6eb0;
+  font-weight: 700;
+  font-size: 45px;
+}
+
+/* IE10+ CSS styles go here */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  h1 {
+    background: none;
+  }
+}
+
+
+/* --------------------- Header ------------------- */
+main {
+  position: relative;
+}
+main.overlay::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  opacity: .7;
+  transition: opacity 0.3s;
+}
+.header {
+  position: relative;
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #5da399;
+  box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.75);
+}
+.header .mobile {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header .mobile-cont button {
+  position: relative;
+  padding: 10px;
+}
+.header .mobile-cont button .bars {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.header .mobile-cont button .close {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.header .mobile-cont.active button .bars {
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.header .mobile-cont.active button .close {
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+.header .mobile-cont button i {
+  font-size: 30px;
+  color: #f4edea;
+}
+.header .mobile .title {
+  color: #f4edea;
+  font-family: 'Assistant', sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 22px;
+}
+.header .mobile-cont .mobile-menu {
+  position: absolute;
+  z-index: 100;
+  right: 0;
+  top: 70px;
+  width: 100%;
+  max-width: 320px;
+  transform: translateX(100%);
+  transition: transform 0.3s;
+  background: linear-gradient(to bottom, #5da399, #3d6eb0)
+}
+.header .mobile-cont.active .mobile-menu {
+  transform: translateX(0);
+  transition: transform 0.3s;
+}
+.header .mobile-nav ul{
+  list-style-type: none;
+  margin: 0;
+  padding: 30px;
+}
+.header .mobile-nav li {
+  margin-bottom: 20px;
+}
+.header .mobile-nav li:last-child {
+  margin-bottom: 0;
+}
+.header .mobile-nav a {
+  color: #f4edea;
+}
+.header .mobile-nav a::after {
+  display: none;
+}
+.header .desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  
+}
+
+@media (min-width: 1025px) {
+  .header .mobile {
+    display: none;
+  }
+  .header .desktop {
+    display: block;
+  }
+  main.overlay::after {
+    display: none;
+  }
+}
+
+
+.slider {
+  width: 500px;
+  margin: 0 auto;
+}
