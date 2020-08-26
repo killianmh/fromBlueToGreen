@@ -12,100 +12,101 @@
   <!-- Font awesome -->
   <script src="https://use.fontawesome.com/cb4e9c15e8.js"></script>
   <!-- Slick -->
-  <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-  <!-- Add the slick-theme.css if you want default styling -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
 </head>
 <body>
-  <header class="header">
-    <div class="mobile">
-      <div class="title">
-        Blue to Green
-      </div>
-      <div class="mobile-cont">
-        <button>
-          <div class="bars">
-            <i class="fa fa-bars"></i>
+  <div class="page-wrapper">
+    <header class="header">
+        <div class="mobile">
+          <div class="title">
+            Blue to Green
           </div>
-          <div class="close">
-            <i class="fa fa-times"></i>
+          <div class="mobile-cont">
+            <button>
+              <div class="bars">
+                <i class="fa fa-bars"></i>
+              </div>
+              <div class="close">
+                <i class="fa fa-times"></i>
+              </div>
+            </button>
+            <div class="mobile-menu">
+              <nav class="mobile-nav">
+                <ul>
+                  <li>
+                    <a href="#">About</a>
+                  </li>
+                  <li>
+                    <a href="#">Get Involved</a>
+                  </li>
+                  <li>
+                    <a href="#">Schedule Pick-up</a>
+                  </li>
+                </ul>
+              </nav>
+            </div>
           </div>
-        </button>
-        <div class="mobile-menu">
-          <nav class="mobile-nav">
-            <ul>
-              <li>
-                <a href="#">About</a>
-              </li>
-              <li>
-                <a href="#">Get Involved</a>
-              </li>
-              <li>
-                <a href="#">Schedule Pick-up</a>
-              </li>
-            </ul>
-          </nav>
         </div>
-      </div>
-    </div>
-    <div class="desktop">
-
-    </div>
-  </header>
-  <main>
-    <section>
-        <div>
-            <h1>from blue to green</h1>
-          </div>
+        <div class="desktop">
+    
+        </div>
+    </header>
+    <main>
+      <section>
           <div>
-            <h2>from blue to green</h2>
-          </div>
+              <h1>from blue to green</h1>
+            </div>
+            <div>
+              <h2>from blue to green</h2>
+            </div>
+            <div>
+              <h3>from blue to green</h3>
+            </div>
+            <a href="#">Link</a>
+      </section>
+      <section>
           <div>
-            <h3>from blue to green</h3>
-          </div>
-          <a href="#">Link</a>
-    </section>
-    <section>
-        <div>
-            <h1>from blue to green</h1>
-          </div>
+              <h1>from blue to green</h1>
+            </div>
+            <div>
+              <h2>from blue to green</h2>
+            </div>
+            <div>
+              <h3>from blue to green</h3>
+            </div>
+            <a href="#">Link</a>
+      </section>
+      <section>
           <div>
-            <h2>from blue to green</h2>
-          </div>
+              <h1>from blue to green</h1>
+            </div>
+            <div>
+              <h2>from blue to green</h2>
+            </div>
+            <div>
+              <h3>from blue to green</h3>
+            </div>
+            <a href="#">Link</a>
+      </section>
+      <section>
           <div>
-            <h3>from blue to green</h3>
-          </div>
-          <a href="#">Link</a>
-    </section>
-    <section>
-        <div>
-            <h1>from blue to green</h1>
-          </div>
-          <div>
-            <h2>from blue to green</h2>
-          </div>
-          <div>
-            <h3>from blue to green</h3>
-          </div>
-          <a href="#">Link</a>
-    </section>
-    <section>
-        <div>
-            <h1>from blue to green</h1>
-          </div>
-          <div>
-            <h2>from blue to green</h2>
-          </div>
-          <div>
-            <h3>from blue to green</h3>
-          </div>
-          <a href="#">Link</a>
-    </section>
-  </main>
-  <footer>
-
-  </footer>
+              <h1>from blue to green</h1>
+            </div>
+            <div>
+              <h2>from blue to green</h2>
+            </div>
+            <div>
+              <h3>from blue to green</h3>
+            </div>
+            <a href="#">Link</a>
+      </section>
+    </main>
+    <footer>
+  
+    </footer>
+  </div>
+  
   <!-- <div class="slider">
     <div class="slide">1</div>
     <div class="slide">2</div>
@@ -127,6 +128,7 @@
       var mobileCont = $('.mobile-cont')
       var mainCont = $('main')
       $('header .mobile-cont button').click(function(){
+        $('body').toggleClass('scroll-lock')
         mobileCont.toggleClass('active')
         mainCont.toggleClass('overlay')
       })

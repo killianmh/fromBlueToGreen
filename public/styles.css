@@ -26,7 +26,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #22031f;
   background-color: #f4edea;
-  overflow-x: hidden;
+  /* overflow-x: hidden; */
 }
 
 a {
@@ -99,6 +99,12 @@ h3 {
 
 
 /* --------------------- Header ------------------- */
+.scroll-lock {
+  overflow: hidden;
+}
+.page-wrapper {
+  overflow: hidden;
+}
 main {
   position: relative;
 }
