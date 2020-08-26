@@ -15,7 +15,6 @@
 /* box-sizing */
 html {
   box-sizing: border-box;
-  /* overflow-x: hidden; */
 }
 *, *:before, *:after {
   box-sizing: inherit;
@@ -26,7 +25,6 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: #22031f;
   background-color: #f4edea;
-  /* overflow-x: hidden; */
 }
 
 a {
