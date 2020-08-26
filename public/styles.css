@@ -61,6 +61,54 @@ button:hover {
   cursor: pointer;
 }
 
+.btn {
+  position: relative;
+  margin: 0 auto;
+  padding: 12px 30px;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: uppercase;
+  border: 2px solid #f4edea;
+  background-color: transparent;
+}
+.btn .text {
+  position: relative;
+  z-index: 1;
+  color: #f4edea;
+  transition: color 0.3s;
+}
+.btn:hover .text {
+  color: #5da399;
+  transition: color 0.3s;
+}
+.btn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f4edea;
+  transform: scaleY(0);
+  transform-origin: bottom;
+  transition: transform 0.3s;
+}
+.btn:hover::after {
+  transform: scaleY(1);
+  transition: transform 0.3s;
+}
+
+@media (min-width: 768px) {
+  .btn {
+    padding: 14px 40px;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1025px) {
+  
+}
+
 /* Headings */
 h1, h2, h3 {
   margin-top: 0.2em;
@@ -101,6 +149,7 @@ h3 {
   overflow: hidden;
 }
 .page-wrapper {
+  position: relative;
   overflow: hidden;
 }
 main {
@@ -108,6 +157,7 @@ main {
 }
 main .mobile-overlay {
   position: absolute;
+  z-index: 100;
   top: 0;
   left: 0;
   width: 100vw;
@@ -118,15 +168,19 @@ main .mobile-overlay {
   pointer-events: none;
 }
 main.overlay .mobile-overlay {
+  pointer-events: all;
   opacity: .7;
   transition: opacity 0.3s;
 }
 .header {
-  position: relative;
+  position: absolute;
+  z-index: 200;
+  left: 0;
+  top: 0;
   width: 100%;
   padding: 10px 15px;
   background-color: #5da399;
-  box-shadow: 0px 10px 21px 3px rgba(0,0,0,0.75);
+  box-shadow: 0px 4px 10px 3px rgba(0,0,0,0.5);
 }
 .header .mobile {
   display: flex;
@@ -209,11 +263,14 @@ main.overlay .mobile-overlay {
 }
 
 @media (min-width: 1025px) {
+  .scroll-lock {
+    overflow: auto;
+  }
   .header .mobile {
     display: none;
   }
   .header {
-    padding: 10px 70px;
+    padding: 5px 70px;
   }
   .header .desktop {
     display: flex;
@@ -226,8 +283,10 @@ main.overlay .mobile-overlay {
     color: #f4edea;
   }
   .header .desktop .icon i {
+    position: relative;
+    top: 3px;
     color: #3d6eb0;
-    font-size: 70px;
+    font-size: 50px;
   }
   .header .desktop .menu {
     flex: 1;
@@ -250,9 +309,9 @@ main.overlay .mobile-overlay {
   .header .desktop .nav a::after {
     content: "";
     position: absolute;
-    bottom: -11px;
+    bottom: -5px;
     left: 0;
-    top: -12px;
+    top: -5px;
     background-color: #bedad6;
     opacity: 0;
     transition: opacity 0.3s;
@@ -280,6 +339,66 @@ main.overlay .mobile-overlay {
   }
 }
 
+
+/* --------------------- Hero ------------------- */
+.hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  background-image: linear-gradient(145deg, rgba(61, 110, 176, 0.85), rgba(93, 163, 153, 0.85)), url("images/hero-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.hero-content {
+  position: relative;
+  width: 100%;
+  max-width: 800px;
+  top: 38px;
+  padding: 30px;
+  color: #f4edea;
+  text-align: center;
+}
+.hero-content h1 {
+  margin: 0 0 0.2em 0;
+  line-height: 1em;
+  font-size: 70px;
+  color: #f4edea;
+  background: none;
+  -webkit-background-clip: unset;
+  background-clip: unset;
+  -webkit-text-fill-color: unset;
+}
+.hero-content p {
+  margin: 0 auto 3em;
+  font-size: 20px;
+  width: 100%;
+  max-width: 480px;
+}
+
+@media (min-width: 768px) {
+  .hero-content {
+    padding: 40px;
+  }
+  .hero-content h1 {
+    font-size: 100px;
+  }
+  .hero-content p {
+    font-size: 30px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .hero-content h1 {
+    font-size: 140px;
+  }
+  .hero-content p {
+    margin: 0 auto 2.5em;
+  }
+}
 
 .slider {
   width: 500px;
