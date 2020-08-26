@@ -101,6 +101,7 @@
             </div>
             <a href="#">Link</a>
       </section>
+      <div class="mobile-overlay"></div>
     </main>
     <footer>
   
@@ -127,8 +128,9 @@
       // mobile menu open/close
       var mobileCont = $('.mobile-cont')
       var mainCont = $('main')
+      var bodyCont = $('body')
       $('header .mobile-cont button').click(function(){
-        $('body').toggleClass('scroll-lock')
+        bodyCont.toggleClass('scroll-lock')
         mobileCont.toggleClass('active')
         mainCont.toggleClass('overlay')
       })
