@@ -186,11 +186,11 @@ main.overlay .mobile-overlay {
 }
 .header .mobile-nav ul{
   list-style-type: none;
-  margin: 0;
-  padding: 30px;
+  margin: 20px 0;
+  padding: 0;
 }
 .header .mobile-nav li {
-  margin-bottom: 20px;
+  padding: 10px 30px;
 }
 .header .mobile-nav li:last-child {
   margin-bottom: 0;
