@@ -468,9 +468,6 @@ section .content {
   top: 0;
   left: 0;
 }
-.svg-cont .hospital {
-  transform: rotate(45deg)
-}
 
 
 @media (min-width: 768px) {
