@@ -453,6 +453,21 @@ section .content {
   margin: 0 auto;
   padding: 0 65px;
 }
+
+/* svg styling and animation */
+.svg-cont {
+  height: 0;
+  position: relative;
+  width: 50%;
+  padding-top: 50%;
+}
+.svg-cont .svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
 @media (min-width: 768px) {
   section .title {
     font-size: 80px;
