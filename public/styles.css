@@ -468,6 +468,9 @@ section .content {
   top: 0;
   left: 0;
 }
+/* #hospital-group {
+  opacity: 0;
+} */
 
 
 @media (min-width: 768px) {
