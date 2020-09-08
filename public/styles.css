@@ -51,6 +51,10 @@ a:hover::after {
   transition: transform 0.3s;
 }
 
+p {
+  font-size: 20px;
+}
+
 button {
   display: block;
   border: none;
@@ -65,10 +69,10 @@ button:hover {
   position: relative;
   margin: 0 auto;
   padding: 12px 30px;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   text-transform: uppercase;
-  border: 4px solid #f4edea;
+  border: 3px solid #f4edea;
   background-color: transparent;
 }
 .btn .text {
@@ -130,7 +134,6 @@ h1, h2, h3 {
   margin-top: 0.2em;
   font-family: 'Assistant', sans-serif;
   text-transform: uppercase;
-  font-weight: 700;
 }
 h1 {
   display: inline-block;
@@ -140,6 +143,7 @@ h1 {
   -webkit-text-fill-color: transparent;
   color: #5da399;
   font-size: 100px;
+  font-weight: 700;
 }
 h2 {
   color: #5da399;
@@ -416,12 +420,13 @@ main.overlay .mobile-overlay {
   }
 }
 
-/* --------------------- How it works ------------------- */
+/* --------------------- Section Styles ------------------- */
+
 section .title-cont {
   width: 100%;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 65px;
+  padding: 0 15px;
 }
 section .title {
   margin-top: 0.2em;
@@ -438,50 +443,126 @@ section .title {
   font-size: 70px;
   line-height: 1em;
 }
+section .content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
 /* IE10+ CSS styles go here */
 @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
   section .title {
     background: none;
   }
 }
+
+/* --------------------- How it works ------------------- */
 .how .title-cont {
   text-align: center;
 }
-section .content {
-  width: 100%;
-  max-width: 1440px;
-  margin: 0 auto;
-  padding: 0 65px;
+.how .content:after {
+  content: "";
+  display: table;
+  clear: both;
 }
 
-/* svg styling and animation 
-  see https://docs.google.com/presentation/d/1Iuvf3saPCJepVJBDNNDSmSsA0_rwtRYehSmmSSLYFVQ/pub?start=false&loop=false&delayms=3000&slide=id.g180585666_036
-*/
 .svg-cont {
-  height: 0;
-  position: relative;
-  width: 50%;
-  padding-top: 50%;  /* (SVG height / SVG width) * width-value */
+  display: none;
 }
-.svg-cont .svg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-/* #hospital-group {
-  opacity: 0;
-} */
 
+.how .step {
+  padding: 30px;
+  margin-bottom: 20px;
+  margin-left: 15%;
+  background-color: #3d6eb0;
+  color: #f4edea;
+}
+.how .step:nth-child(2) {
+  background-color: #5da399;
+  margin-right: 15%;
+  margin-left: 0;
+}
+.how .step .heading {
+  font-size: 40px;
+  font-weight: 700;
+}
+.how .step p {
+  margin-bottom: 50px;
+}
+.how .step .btn {
+  margin: 0;
+  padding: 14px 20px;
+}
 
 @media (min-width: 768px) {
+  section .title-cont {
+    padding: 0 65px;
+  }
   section .title {
     font-size: 80px;
+  }
+  section .content {
+    padding: 0 65px;
+  }
+  .how .step {
+    padding: 40px;
   }
 }
 
 @media (min-width: 1025px) {
   section .title {
     font-size: 100px;
+  }
+  /* svg styling and animation 
+  see https://docs.google.com/presentation/d/1Iuvf3saPCJepVJBDNNDSmSsA0_rwtRYehSmmSSLYFVQ/pub?start=false&loop=false&delayms=3000&slide=id.g180585666_036
+  */
+  .svg-cont {
+    display: block;
+    height: 0;
+    position: relative;
+    width: 50%;
+    padding-top: 50%;  /* (SVG height / SVG width) * width-value */
+  }
+  .svg-cont .svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  .svg-cont .svg-truck {
+    position: absolute;
+    z-index: 2;
+    top: 8%;
+    left: 40%;
+    width: 20%;
+    height: 16%;
+  }
+  .how .content {
+    position: relative;
+  }
+  .how .step {
+    position: absolute;
+    margin: 0;
+    top: 50%;
+    right: 180px;
+    transform: translateY(-50%);
+    padding: 50px;
+    background-color: #3d6eb0;
+    color: #f4edea;
+    width: calc(50% - 180px);
+  }
+  .how .step:nth-child(2) {
+    background-color: #3d6eb0;
+    margin: 0;
+  }
+  .how .step .heading {
+    font-size: 50px;
+    font-weight: 700;
+  }
+  .how .step p {
+    margin-bottom: 60px;
+  }
+  .how .step .btn {
+    padding: 14px 20px;
   }
 }
 
