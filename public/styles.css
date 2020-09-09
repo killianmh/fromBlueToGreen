@@ -512,6 +512,7 @@ section .content {
 @media (min-width: 1025px) {
   section .title {
     font-size: 100px;
+    margin-bottom: 30px;
   }
   /* svg styling and animation 
   see https://docs.google.com/presentation/d/1Iuvf3saPCJepVJBDNNDSmSsA0_rwtRYehSmmSSLYFVQ/pub?start=false&loop=false&delayms=3000&slide=id.g180585666_036
