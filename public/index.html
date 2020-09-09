@@ -264,54 +264,80 @@
           </div>
         </div>
       </section>
-      <section>
-          <div>
-              <h1>from blue to green</h1>
+      <section class="stats">
+        <div class="title-cont">
+          <div class="title">
+            Impact
+          </div>
+        </div>
+        <div class="content">
+          <div class="main">
+            <div class="slider-nums">
+              <div class="slide big" id="first" data-target="189">
+                0
+              </div>
+              <div class="slide big" data-target="9">
+                
+              </div>
+              <div class="slide big" data-target="89">
+                
+              </div>
             </div>
-            <div>
-              <h2>from blue to green</h2>
+          </div>
+          <div class="secondary">
+            <div class="slider-nav">
+              <div class="controls">
+                  <button class="prev">
+                      <i class="fa fa-angle-left"></i>
+                    </button>
+                <button class="next">
+                  <i class="fa fa-angle-right"></i>
+                </button>
+                
+              </div>
+              <div class="slide">
+                Pounds of Material Saved from Landfills
+              </div>
+              <div class="slide">
+                Sleeping Bags Delivered to the Homeless
+              </div>
+              <div class="slide">
+                Totes Delivered
+              </div>
             </div>
-            <div>
-              <h3>from blue to green</h3>
-            </div>
-            <a href="#">Link</a>
+          </div>
+        </div>
       </section>
-      <section>
-          <div>
-              <h1>from blue to green</h1>
-            </div>
-            <div>
-              <h2>from blue to green</h2>
-            </div>
-            <div>
-              <h3>from blue to green</h3>
-            </div>
-            <a href="#">Link</a>
+      <section class="">
+        <div class="title-cont">
+          <div class="title">
+            How it works
+          </div>
+        </div>
+        <div class="content">
+          
+        </div>
       </section>
-      <section>
-          <div>
-              <h1>from blue to green</h1>
+      <section class="">
+          <div class="title-cont">
+            <div class="title">
+              How it works
             </div>
-            <div>
-              <h2>from blue to green</h2>
+          </div>
+          <div class="content">
+            
+          </div>
+        </section>
+        <section class="">
+            <div class="title-cont">
+              <div class="title">
+                How it works
+              </div>
             </div>
-            <div>
-              <h3>from blue to green</h3>
+            <div class="content">
+              
             </div>
-            <a href="#">Link</a>
-      </section>
-      <section>
-          <div>
-              <h1>from blue to green</h1>
-            </div>
-            <div>
-              <h2>from blue to green</h2>
-            </div>
-            <div>
-              <h3>from blue to green</h3>
-            </div>
-            <a href="#">Link</a>
-      </section>
+          </section>
       <div class="mobile-overlay"></div>
     </main>
     <footer>
@@ -346,7 +372,67 @@
         mainCont.toggleClass('overlay')
       })
 
-      $('.slider').slick();
+      // $('.slider').slick();
+
+      var statsMain = $('.stats .slider-nums')
+      var statsNav = $('.stats .slider-nav')
+
+      statsMain.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.slider-nav'
+      });
+      statsNav.slick({
+        slide: '.slide',
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        asNavFor: '.stats .slider-nums',
+        dots: false,
+        prevArrow: '.stats .slider-nav .controls .prev',
+        nextArrow: '.stats .slider-nav .controls .next',
+        focusOnSelect: true,
+        mobileFirst: true,
+        responsive: [
+          {
+            breakpoint: 1025,
+            settings: {
+              vertical: true,
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            }
+          }
+        ]
+      });
+
+      var statsInterval
+      statsMain.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        var nextNode = $(slick.$slides[nextSlide]);
+        nextNode.text('0')
+      })
+      statsMain.on('afterChange', function(event, slick, currentSlide) {
+        clearInterval(statsInterval)
+        var num = 0;
+        var targetNode = $(slick.$slides[currentSlide]);
+        var targetNum = $(slick.$slides[currentSlide]).attr("data-target");
+        animIncrement(num, targetNum, targetNode)
+      })
+
+      function animIncrement(num, target, node) {
+        statsInterval = setInterval(function() {
+          node.text(num)
+          if(num >= target) clearInterval(statsInterval)
+          num++
+        }, 30)
+      }
+
+      // first stats animation on load
+      var firstNode = $(statsMain).find("#first")
+      var firstStat = $(statsMain).find("#first").attr("data-target")
+      animIncrement(0, firstStat, firstNode)
+
+
 
 
 
