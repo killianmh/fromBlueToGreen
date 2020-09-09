@@ -52,7 +52,7 @@ a:hover::after {
 }
 
 p {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 button {
@@ -105,7 +105,7 @@ button:hover {
 @media (min-width: 768px) {
   .btn {
     padding: 14px 40px;
-    font-size: 20px;
+    font-size: 18px;
   }
 }
 
@@ -445,7 +445,7 @@ section .title {
 }
 section .content {
   width: 100%;
-  max-width: 1440px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -520,8 +520,8 @@ section .content {
     display: block;
     height: 0;
     position: relative;
-    width: 50%;
-    padding-top: 50%;  /* (SVG height / SVG width) * width-value */
+    width: 46%;
+    padding-top: 46%;  /* (SVG height / SVG width) * width-value */
   }
   .svg-cont .svg {
     position: absolute;
@@ -545,7 +545,7 @@ section .content {
     top: 50%;
     right: 180px;
     transform: translateY(-50%);
-    padding: 50px;
+    padding: 40px;
     background-color: #3d6eb0;
     color: #f4edea;
     width: calc(50% - 180px);
@@ -555,11 +555,8 @@ section .content {
     margin: 0;
   }
   .how .step .heading {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: 700;
-  }
-  .how .step p {
-    margin-bottom: 60px;
   }
   .how .step .btn {
     padding: 14px 20px;
