@@ -265,44 +265,65 @@
         </div>
       </section>
       <section class="stats">
-        <div class="title-cont">
-          <div class="title">
-            Impact
-          </div>
-        </div>
         <div class="content">
-          <div class="main">
-            <div class="slider-nums">
-              <div class="slide big" id="first" data-target="189">
-                0
-              </div>
-              <div class="slide big" data-target="9">
-                
-              </div>
-              <div class="slide big" data-target="89">
-                
+          <div class="outer">
+            <div class="inner">
+              <div class="bg-slider">
+                  <div class="slide big" id="first" data-target="189" style="background-image: linear-gradient(rgba(50, 41, 47, 0.8), rgba(50, 41, 47, 0.8)), url(images/trash.jpg)"></div>
+                  <div class="slide big" data-target="9"
+                  style="background-image: linear-gradient(rgba(50, 41, 47, 0.8), rgba(50, 41, 47, 0.8)), url(images/homeless.jpg)"></div>
+                  <div class="slide big" data-target="89"
+                  style="background-image: linear-gradient(rgba(50, 41, 47, 0.8), rgba(50, 41, 47, 0.8)), url(images/tote.jpg)"></div>
               </div>
             </div>
           </div>
-          <div class="secondary">
-            <div class="slider-nav">
-              <div class="controls">
+          <div class="controls">
+              <button class="prev">
+                  <i class="fa fa-angle-left"></i>
+                </button>
+            <button class="next">
+              <i class="fa fa-angle-right"></i>
+            </button>
+          </div>
+          <div class="main-cont">
+            <div class="main-slider">
+              <div class="controls-large">
                   <button class="prev">
-                      <i class="fa fa-angle-left"></i>
+                      <i class="fa fa-angle-up"></i>
                     </button>
                 <button class="next">
-                  <i class="fa fa-angle-right"></i>
+                  <i class="fa fa-angle-down"></i>
                 </button>
-                
               </div>
-              <div class="slide">
-                Pounds of Material Saved from Landfills
+              <div class="slide" id="first" data-target="189">
+                <div class="num-cont">
+                  
+                </div>
+                <div class="description">
+                  <div class="inner">
+                    Pounds of Material Saved from Landfills
+                  </div>
+                </div>
               </div>
-              <div class="slide">
-                Sleeping Bags Delivered to the Homeless
+              <div class="slide" id="second" data-target="76">
+                <div class="num-cont">
+                    
+                </div>
+                <div class="description">
+                  <div class="inner">
+                    Sleeping Bags Delivered to the Homeless
+                  </div>
+                </div>
               </div>
-              <div class="slide">
-                Totes Delivered
+              <div class="slide" id="third" data-target="4">
+                <div class="num-cont">
+                    
+                </div>
+                <div class="description">
+                  <div class="inner">
+                    Totes Delivered
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -372,67 +393,101 @@
         mainCont.toggleClass('overlay')
       })
 
-      // $('.slider').slick();
+      // Stats slider functionality
 
-      var statsMain = $('.stats .slider-nums')
-      var statsNav = $('.stats .slider-nav')
+      var stats = $(".stats .main-slider")
+      var bg = $(".stats .bg-slider")
 
-      statsMain.slick({
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false,
-        fade: true,
-        asNavFor: '.slider-nav'
-      });
-      statsNav.slick({
+      // zero numbers out on init
+      stats.on('init reInit', function(event){
+        var slides = stats.find(".slide")
+        $.each(slides, function(key, value) {
+          console.log(value)
+          var numDigits = $(value).attr("data-target").length
+          var numCont = $(value).find(".num-cont")
+          var digits = $(numCont).find(".digit")
+          if (digits.length > 0){
+            for (let i = 0; i < numDigits; i++) {
+              $.each(digits, function(key, value){
+                $(value).text('0')
+              })
+            }
+          } else {
+            for (let i = 0; i < numDigits; i++) {
+              numCont.append( "<div class='digit'>0</div>" )
+            }
+          }
+        })
+      })
+
+      stats.slick({
         slide: '.slide',
         slidesToShow: 1,
         slidesToScroll: 1,
-        asNavFor: '.stats .slider-nums',
-        dots: false,
-        prevArrow: '.stats .slider-nav .controls .prev',
-        nextArrow: '.stats .slider-nav .controls .next',
-        focusOnSelect: true,
+        prevArrow: '.stats .controls .prev',
+        nextArrow: '.stats .controls .next',
+        fade: true,
+        asNavFor: '.stats .bg-slider',
         mobileFirst: true,
         responsive: [
           {
             breakpoint: 1025,
             settings: {
               vertical: true,
-              slidesToShow: 1,
-              slidesToScroll: 1,
+              fade: false,
+              prevArrow: '.stats .controls-large .prev',
+              nextArrow: '.stats .controls-large .next',
             }
           }
         ]
       });
+      bg.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false,
+        fade: true,
+        asNavFor: '.stats .main-slider'
+      });
 
-      var statsInterval
-      statsMain.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-        var nextNode = $(slick.$slides[nextSlide]);
-        nextNode.text('0')
+      // Zero out before change to next slide
+      stats.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        var digits = $(slick.$slides[nextSlide]).find(".num-cont").find(".digit");
+        $.each(digits, function(key, value){
+          $(value).text('0')
+        })
       })
-      statsMain.on('afterChange', function(event, slick, currentSlide) {
-        clearInterval(statsInterval)
+
+      // Animate number change for new slide
+      stats.on('afterChange', function(event, slick, currentSlide) {
         var num = 0;
-        var targetNode = $(slick.$slides[currentSlide]);
+        var targetNodes = $(slick.$slides[currentSlide]).find(".num-cont").find(".digit");
         var targetNum = $(slick.$slides[currentSlide]).attr("data-target");
-        animIncrement(num, targetNum, targetNode)
+        console.log(targetNum, targetNum.length)
+        $.each(targetNodes, function(key, value){
+          console.log(targetNum[key])
+          animIncrement(num, targetNum[key], value )
+        })
       })
 
+      // number animation function
       function animIncrement(num, target, node) {
+        var statsInterval
+        clearInterval(statsInterval)
         statsInterval = setInterval(function() {
-          node.text(num)
+          $(node).text(num)
           if(num >= target) clearInterval(statsInterval)
           num++
         }, 30)
       }
 
       // first stats animation on load
-      var firstNode = $(statsMain).find("#first")
-      var firstStat = $(statsMain).find("#first").attr("data-target")
-      animIncrement(0, firstStat, firstNode)
+      var firstNode = $(stats).find(".slick-current")
+      var firstTargetNum = firstNode.attr("data-target")
+      var firstTargetNodes = firstNode.find(".num-cont").find(".digit")
 
-
+      $.each(firstTargetNodes, function(key, value){
+        animIncrement(0, firstTargetNum[key], value)
+      })
 
 
 
