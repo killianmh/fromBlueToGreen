@@ -14,6 +14,12 @@
   <!-- Slick -->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
+  <!-- Picturefill -->
+  <script>
+    // Picture element HTML5 shiv
+    document.createElement( "picture" );
+  </script>
+  <script src="picturefill.js" async></script>
 </head>
 <body>
   <div class="page-wrapper">
@@ -226,8 +232,7 @@
                 Pick Up
               </div>
               <p>
-                Our service picks up used Blue Wrap
-                from healthcare facilities.
+                Our service picks up used blue surgical sanitary wrap from healthcare facilities.
               </p>
               <button class="btn">
                 <div class="text">
@@ -329,24 +334,172 @@
           </div>
         </div>
       </section>
-      <section class="">
+      <section class="values">
         <div class="title-cont">
           <div class="title">
-            How it works
+            Our values
           </div>
         </div>
         <div class="content">
-          
+          <div class="card-cont">
+            <div class="card">
+              <div class="icon">
+                <img src="images/arrow.svg" alt="">
+              </div>
+              <div class="card-title">
+                Upcycle
+              </div>
+              <div class="description">
+                <p>
+                  Healthcare facilities on average throw away half a ton of blue wrap every month! We collect this used material and upcycle it into items like totes and sleeping bags.
+                </p>
+              </div>
+              <button class="btn">
+                <a href="#/" class="text">
+                  join the cause
+                </a>
+              </button>
+            </div>
+            <div class="card">
+              <div class="icon">
+                <img src="images/heart.svg" alt="">
+              </div>
+              <div class="card-title">
+                Give
+              </div>
+              <div class="description">
+                <p>
+                  100% of our products are donated to women's shelters, homeless shelters, and community programs.
+                </p>
+              </div>
+              <button class="btn">
+                <a href="#/" class="text">
+                  how to help
+                </a>
+              </button>
+            </div>
+            <div class="card">
+              <div class="icon">
+                <img src="images/sport-team.svg" alt="">
+              </div>
+              <div class="card-title">
+                Engage
+              </div>
+              <div class="description">
+                <p>
+                  We have an army of volunteers to process the blue wrap and distribute the upcycled products. We also work with after-school programs and provide jobs for those with limited skills or mobility.
+                </p>
+              </div>
+              <button class="btn">
+                <a href="#/" class="text">
+                  join us
+                </a>
+              </button>
+            </div>
+          </div>
         </div>
       </section>
-      <section class="">
+      <section class="showcase">
           <div class="title-cont">
             <div class="title">
-              How it works
+              Feel the love
             </div>
           </div>
           <div class="content">
-            
+            <div class="controls">
+              <button class="prev">
+                  <i class="fa fa-angle-left"></i>
+                </button>
+              <button class="next">
+                <i class="fa fa-angle-right"></i>
+              </button>
+            </div>
+            <div class="slider">
+              <div class="slide">
+                <div class="img-cont">
+                    <img 
+                      srcset="images/charity-640.jpg 640w, images/charity-1920.jpg 1920w"
+                      sizes="(max-width: 1024px) 640px,
+                          1920px"
+                      src="images/charity-1920.jpg"
+                      alt="Charitable giving">
+                </div>
+                <div class="description-cont">
+                  <div class="description-title">
+                    Upcycle
+                  </div>
+                  <div class="description">
+                    <p>
+                      Healthcare facilities on average throw away half a ton of blue wrap every month! We collect this used material and upcycle it into items like totes and sleeping bags.
+                    </p>
+                    <p class="photo-credit">
+                      Photo Credit: 
+                    </p>
+                  </div>
+                  <button class="btn">
+                    <a href="#/" class="text">
+                      Read more
+                    </a>
+                  </button>
+                </div>
+              </div>
+              <div class="slide">
+                  <div class="img-cont">
+                      <img 
+                        srcset="images/charity-640.jpg 640w, images/charity-1920.jpg 1920w"
+                        sizes="(max-width: 1024px) 640px,
+                            1920px"
+                        src="images/charity-1920.jpg"
+                        alt="Charitable giving">
+                  </div>
+                  <div class="description-cont">
+                    <div class="description-title">
+                      Upcycle
+                    </div>
+                    <div class="description">
+                      <p>
+                        Healthcare facilities on average throw away half a ton of blue wrap every month! We collect this used material and upcycle it into items like totes and sleeping bags.
+                      </p>
+                      <p class="photo-credit">
+                        Photo Credit: 
+                      </p>
+                    </div>
+                    <button class="btn">
+                      <a href="#/" class="text">
+                        Read more
+                      </a>
+                    </button>
+                  </div>
+              </div>
+              <div class="slide">
+                  <div class="img-cont">
+                      <img 
+                        srcset="images/charity-640.jpg 640w, images/charity-1920.jpg 1920w"
+                        sizes="(max-width: 1024px) 640px,
+                            1920px"
+                        src="images/charity-1920.jpg"
+                        alt="Charitable giving">
+                  </div>
+                  <div class="description-cont">
+                    <div class="description-title">
+                      Upcycle
+                    </div>
+                    <div class="description">
+                      <p>
+                        Healthcare facilities on average throw away half a ton of blue wrap every month! We collect this used material and upcycle it into items like totes and sleeping bags.
+                      </p>
+                      <p class="photo-credit">
+                        Photo Credit: 
+                      </p>
+                    </div>
+                    <button class="btn">
+                      <a href="#/" class="text">
+                        Read more
+                      </a>
+                    </button>
+                  </div>
+                </div>
+            </div>
           </div>
         </section>
         <section class="">
@@ -489,6 +642,17 @@
         animIncrement(0, firstTargetNum[key], value)
       })
 
+
+
+      // Showcase slider
+      var showcase = $(".showcase .slider")
+      showcase.slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        prevArrow: '.showcase .controls .prev',
+        nextArrow: '.showcase .controls .next',
+        fade: false,
+      });
 
 
       // gsap animation of svg
