@@ -1069,6 +1069,7 @@ section .content {
 /* --------------------- Footer ------------------- */
 footer {
   padding: 42px 15px;
+  margin-top: 100px;
   background-color: #5da399;
   color: #f4edea;
 }
@@ -1157,8 +1158,9 @@ footer .attribution ul li:last-child::after {
 
 @media (min-width: 1025px){
   footer {
-      padding-left: 70px;
-      padding-right: 70px;
+    padding-left: 70px;
+    padding-right: 70px;
+    margin-top: 120px;
   }
   footer .footer-nav ul {
     display: flex;
