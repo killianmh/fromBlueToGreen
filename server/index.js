@@ -1,10 +1,14 @@
 const express = require('express')
-const app = express()
-const port = process.env.PORT || 3001
 const path = require("path");
+const compression = require("compression")
+
+const port = process.env.PORT || 3001
+const app = express()
+
+app.use(compression())
 
 app.use(express.static(path.join(__dirname, '..', 'public')));
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`App listening at http://localhost:${port}`)
 })
