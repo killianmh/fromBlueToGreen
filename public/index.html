@@ -22,7 +22,10 @@
   async
   src="https://use.fontawesome.com/cb4e9c15e8.js"></script>
   <!-- Slick -->
-  <link rel="stylesheet" type="text/css" href="slick.css"/>
+  <link rel="preload" href="slick.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="slick.css">
+  </noscript>
 
   <!-- Picturefill -->
   <script>
