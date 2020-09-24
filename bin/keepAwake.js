@@ -1,6 +1,6 @@
 const fetch = require('node-fetch');
 
-// Setup Heroku Scheduler to run job starting at 12:00pm UTC each day and runs for 14 hours
+// Setup Heroku Scheduler to run job starting at 12:00pm UTC each day
 // Since this script runs for 14 hours, this means this application will be awake 
 // from 5:00 am AZ time - 7:00 pm AZ time
 
