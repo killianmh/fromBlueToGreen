@@ -9,6 +9,11 @@ $(document).ready(function(){
     mobileCont.toggleClass('active')
     mainCont.toggleClass('overlay')
   })
+  $('header .mobile-menu a').click(function() {
+    bodyCont.removeClass('scroll-lock')
+    mobileCont.removeClass('active')
+    mainCont.removeClass('overlay')
+  })
 
   // intersection observer factory
   function createObserver(options, target, handleIntersect) {
