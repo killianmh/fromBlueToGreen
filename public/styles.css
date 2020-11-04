@@ -70,7 +70,7 @@ body {
   margin: 0;
   font-family: 'Open Sans', sans-serif;
   color: #32292f;
-  background-color: #f4edea;
+  background-color: #f4f7f6;
 }
 
 a {
@@ -98,7 +98,8 @@ a:hover::after {
 }
 
 p {
-  font-size: 18px;
+  font-size: 16px;
+  line-height: 1.6em;
 }
 
 button {
@@ -163,7 +164,7 @@ img {
 }
 
 section {
-  margin-bottom: 30px;
+  margin-bottom: 40px;
 }
 
 @media (min-width: 768px) {
@@ -552,8 +553,8 @@ section .title-cont {
   padding: 0 15px;
 }
 section .title {
-  margin-top: 0.2em;
-  margin-bottom: 0.6em;
+  margin-top: 0;
+  margin-bottom: 0.4em;
   font-family: 'Assistant', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -579,11 +580,126 @@ section .content {
   }
 }
 
+/* --------------------- Cards ------------------- */
+.card-cont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.card {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  max-width: 300px;
+  margin: 0 15px 50px;
+  background-color: #ffffff;
+  -webkit-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+  box-shadow: 4px 4px 10px 0px rgba(0,0,0,0.75);
+}
+.card .image {
+  width: 100%;
+  height: 0;
+  padding-top: 70%;
+}
+.card .image {
+  background-size: cover;
+  background-position: center center;
+}
+.card#how-step-1 .image {
+  background-image: url("images/rawBlueWrap.jpg");
+}
+.card#how-step-2 .image {
+  background-image: url("images/finishedBags.jpg");
+}
+.card#how-step-3 .image {
+  background-image: url("images/totes.jpg");
+}
+.card .content {
+  padding: 20px;
+}
+.card .icon {
+  width: 35%;
+  margin: 0 auto 20px;
+}
+.card-title {
+  font-size: 26px;
+  line-height: 1em;
+  font-weight: 700;
+}
+.card .description {
+  margin-bottom: 35px;
+}
+.card .description p {
+  margin-top: 0.8em;
+  line-height: 1.6em;
+}
+.card .btn {
+  margin: 0;
+  white-space: nowrap;
+  border: 3px solid #3d6eb0;
+}
+.card .btn::after {
+  background-color: #3d6eb0;
+}
+.card .btn .text {
+  color: #3d6eb0;
+  font-weight: 700;
+}
+.card .btn:hover .text {
+  color: #f4edea;
+}
+.card .btn a::after{
+  display: none;
+}
+
+
+@media (min-width: 768px) {
+  .card {
+    max-width: 315px;
+    margin-right: 20px;
+    margin-left: 20px;
+    transform: scale(1);
+    transition: 0.3s transform, 0.3s border;
+  }
+  .card .description {
+    margin-bottom: 90px;
+  }
+  .card .content {
+    padding: 30px;
+  }
+  .card:hover {
+    transform: scale(1.05);
+    transition: 0.3s transform;
+  }
+  .card:hover .btn {
+    opacity: 1;
+    transition: 0.3s opacity;
+  }
+  .card .btn {
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card {
+    margin-bottom: 0;
+  }
+  .card:last-child {
+    margin-bottom: 0;
+  }
+}
+
 /* --------------------- How it works ------------------- */
+.how > .content {
+  padding: 0;
+}
 .how .title-cont {
   text-align: center;
 }
-.how .content:after {
+/* .how .content:after {
   content: "";
   display: table;
   clear: both;
@@ -629,6 +745,7 @@ section .content {
   }
   section .title {
     font-size: 80px;
+    margin-bottom: 0.6em;
   }
   section .content {
     padding: 0 65px;
@@ -636,22 +753,24 @@ section .content {
   .how .step {
     padding: 40px;
   }
-}
+} */
 
 @media (min-width: 1025px) {
   section .title {
     font-size: 100px;
-    margin-bottom: 30px;
+    margin-bottom: 
+    45px;
   }
   /* svg styling and animation 
   see https://docs.google.com/presentation/d/1Iuvf3saPCJepVJBDNNDSmSsA0_rwtRYehSmmSSLYFVQ/pub?start=false&loop=false&delayms=3000&slide=id.g180585666_036
   */
-  .svg-cont {
+   /* (SVG height / SVG width) * width-value */
+  /* .svg-cont {
     display: block;
     height: 0;
     position: relative;
     width: 46%;
-    padding-top: 46%;  /* (SVG height / SVG width) * width-value */
+    padding-top: 46%; 
   }
   .svg-cont .svg {
     position: absolute;
@@ -666,9 +785,7 @@ section .content {
     width: 20%;
     height: 16%;
   }
-  .how .content {
-    position: relative;
-  }
+  
   .how .step {
     position: absolute;
     margin: 0;
@@ -689,7 +806,7 @@ section .content {
   .how .step .btn {
     padding: 14px 20px;
   }
-}
+} */
 
 
 /* --------------------- Stats ------------------- */
@@ -869,119 +986,46 @@ section .content {
   }
 }
 
-/* --------------------- VAlues ------------------- */
-.values .title-cont {
-  text-align: center;
-}
-.values .card {
-  position: relative;
+/* --------------------- About ------------------- */
+.about .content {
   width: 100%;
-  padding: 0 5px;
-  max-width: 300px;
-  margin: 0 auto 90px;
-  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
-.values .card:last-child {
-  margin-bottom: 0;
+.about .image, .about .text {
+  max-width: 400px;
+  margin: 0 auto;
 }
-.values .card .icon {
-  width: 35%;
-  margin: 0 auto 20px;
-}
-.values .card-title {
-  font-size: 30px;
-  line-height: 1em;
-  font-weight: 700;
-}
-.values .card .description {
-  margin-bottom: 35px;
-}
-.values .card .description p {
-  margin-top: 0.8em;
-  line-height: 1.6em;
-}
-.values .card .btn {
-  white-space: nowrap;
-  border: 3px solid #3d6eb0;
-}
-.values .card .btn::after {
-  background-color: #3d6eb0;
-}
-.values .card .btn .text {
-  color: #3d6eb0;
-  font-weight: 700;
-}
-.values .card .btn:hover .text {
-  color: #f4edea;
-}
-.values .card .btn a::after{
-  display: none;
+.about .image {
+  margin-bottom: 25px;
 }
 
 
 @media (min-width: 768px) {
-  .values .title {
-    margin-bottom: 60px;
-  }
-  .values .card-cont {
+  .about .content {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
   }
-  .values .card {
-    max-width: 350px;
-    padding: 30px 30px 30px;
-    border: 2px solid transparent;
-    transform: scale(1);
-    transition: 0.3s transform, 0.3s border;
+  .about .image, .about .text {
+    margin: 0;
   }
-  .values .card:last-child {
-    margin-bottom: 90px;
+  .about .image {
+    margin-right: 40px;
+    flex: 1 0 50%;
   }
-  .values .card .description {
-    margin-bottom: 90px;
-  }
-  .values .card .btn {
-    position: absolute;
-    bottom: 30px;
-    right: 50%;
-    transform: translateX(50%);
-    opacity: 0;
-    transition: 0.3s opacity;
-  }
-  .values .card:hover {
-    border-color:  #3d6eb0;
-    transform: scale(1.05);
-    transition: 0.3s transform, 0.3s border;
-  }
-  .values .card:hover .btn {
-    opacity: 1;
-    transition: 0.3s opacity;
+  .about .text p {
+    margin-top: 0;
   }
 }
 
-@media (min-width: 1025px) {
-  .values .card-title {
-    font-size: 35px;
-  }
-  .values .card .description p {
-    line-height: 1.4em;
-    font-size: 18px;
-  }
+/* --------------------- Volunteer ------------------- */
+.volunteer .title-cont {
+  text-align: center;
 }
-
-@media (min-width: 1200px) {
-  .values .card {
-    margin-bottom: 0;
-  }
-  .values .card:last-child {
-    margin-bottom: 0;
-  }
-}
-
 
 
 /* --------------------- Showcase ------------------- */
-.showcase .title-cont {
+/* .showcase .title-cont {
   padding: 0 20px;
 }
 .showcase .content {
@@ -1130,7 +1174,7 @@ section .content {
     margin: 0 0 -275px 0;
     background-color: rgba(93, 163, 153, 0.9)
   }
-}
+} */
 
 
 /* --------------------- Footer ------------------- */
