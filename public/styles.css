@@ -259,6 +259,8 @@ main.overlay .mobile-overlay {
   transition: 0.3s background-color;
 }
 .header.darken {
+  padding-top: 5px;
+  padding-bottom: 5px;
   background-color: rgba(22, 46, 60, 0.8);
   transition: 0.3s background-color;
 }
@@ -266,6 +268,9 @@ main.overlay .mobile-overlay {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.header .mobile .title {
+  margin-right: 50px;
 }
 .header .mobile-cont button {
   position: relative;
@@ -300,12 +305,15 @@ main.overlay .mobile-overlay {
   font-size: 30px;
   color: #f4edea;
 }
-.header .mobile .title {
+.header .mobile .title a {
   color: #f4edea;
   font-family: 'Assistant', sans-serif;
   text-transform: uppercase;
   font-weight: 700;
   font-size: 22px;
+}
+.header .mobile .title a::after {
+  display: none;
 }
 .header .mobile-cont .mobile-menu {
   position: absolute;
@@ -333,7 +341,7 @@ main.overlay .mobile-overlay {
 .header .mobile-cont .mobile-nav li {
   position: relative;
   padding: 10px 30px;
-  font-size: 20px;
+  font-size: 30px;
   text-align: center;
   opacity: 0;
 }
@@ -399,7 +407,7 @@ main.overlay .mobile-overlay {
     display: none;
   }
   .header {
-    padding: 5px 70px;
+    padding: 20px 70px;
   }
   .header .desktop {
     display: flex;
@@ -431,8 +439,13 @@ main.overlay .mobile-overlay {
   }
   .header .desktop .title {
     padding: 12px 17px;
-    font-family: 'Open Sans', sans-serif;
-    font-size: 18px;
+    font-family: 'Assistant', sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+  }
+  .header .title a::after {
+    display: none;
   }
   .header .desktop .menu {
     flex: 1;
@@ -445,26 +458,13 @@ main.overlay .mobile-overlay {
     padding: 0;
   }
   .header .desktop .nav {
-    margin: 0 30px;
+    margin: 0 0 0 30px;
   }
   .header .desktop .nav a {
     position: relative;
     padding: 12px 17px;
     font-family: 'Open Sans', sans-serif;
     font-size: 18px;
-  }
-  .header .desktop .social a {
-    font-size: 16px;
-    padding: 12px 17px;
-    color: #f4edea;
-    transition: color 0.3s;
-  }
-  .header .desktop .social a:hover {
-    color: #3d6eb0;
-    transition: color 0.3s;
-  }
-  .header .desktop .social a::after {
-    display: none;
   }
   main.overlay .mobile-overlay {
     display: none;
@@ -494,17 +494,18 @@ main.overlay .mobile-overlay {
 .hero-content {
   position: relative;
   width: 100%;
-  max-width: 1200px;
+  max-width: 875px;
   top: 38px;
   padding: 30px;
   color: #f4edea;
   text-align: center;
 }
 .hero-content h1 {
-  margin: 0 0 0.2em 0;
+  margin: 0 0 0.8em 0;
   line-height: 1em;
-  font-size: 46px;
+  font-size: 60px;
   color: #f4edea;
+  text-transform: none;
   background: none;
   -webkit-background-clip: unset;
   background-clip: unset;
@@ -513,7 +514,7 @@ main.overlay .mobile-overlay {
 .hero-content p {
   margin: 0 auto 3em;
   font-size: 20px;
-  width: 100%;
+  width: 70%;
 }
 
 @media (min-width: 768px) {
@@ -521,7 +522,7 @@ main.overlay .mobile-overlay {
     padding: 40px;
   }
   .hero-content h1 {
-    font-size: 60px;
+    font-size: 70px;
   }
 }
 
@@ -529,12 +530,16 @@ main.overlay .mobile-overlay {
   .hero {
     background-image: linear-gradient(145deg, rgba(61, 110, 176, 0.85), rgba(93, 163, 153, 0.85)), url("images/hero-bg.jpg");
   }
+  .hero-content {
+    top: 70px;
+  }
   .hero-content h1 {
     font-size: 90px;
+    margin-bottom: 1em;
   }
   .hero-content p {
     margin: 0 auto 2.5em;
-    font-size: 25px;
+    font-size: 20px;
   }
 }
 
