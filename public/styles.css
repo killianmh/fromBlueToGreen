@@ -1020,8 +1020,56 @@ section .content {
 }
 
 /* --------------------- Volunteer ------------------- */
+.volunteer {
+  margin-bottom: 0;
+}
 .volunteer .title-cont {
   text-align: center;
+}
+.volunteer .title {
+  font-size: 50px;
+}
+.volunteer form {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  background-color: #ffffff;
+  font-family: 'Open Sans', sans-serif;
+    color: #32292f;
+}
+.volunteer label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+}
+.volunteer input, .volunteer textarea {
+  width: 100%;
+  border: none;
+  border-bottom: 4px solid #3d6eb0;
+  background: transparent;
+  font-size: 24px;
+  padding: 5px 15px 10px 15px;
+  font-family: 'Open Sans', sans-serif;
+  color: #32292f;
+  color: #ffffff;
+}
+.volunteer input:focus, .volunteer textarea:focus {
+
+}
+.volunteer .input-section {
+  margin-bottom: 30px;
+}
+
+@media (min-width: 768px) {
+  .volunteer .title {
+    font-size: 70px;
+  }
+}
+
+@media (min-width: 1025px){
+  .volunteer .title {
+    font-size: 100px;
+  }
 }
 
 
