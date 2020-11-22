@@ -752,7 +752,7 @@ section .content {
 }
 .stats .controls {
   position: absolute;
-  top: 46%;
+  top: 50%;
   right: 50%;
   transform: translate(50%, -50%);
   z-index: 2000;
@@ -819,7 +819,7 @@ section .content {
 .stats .main-slider .num-cont {
   display: flex;
   justify-content: center;
-  font-size: calc(110px + 40 * ((100vw - 320px) / 1120));
+  font-size: calc(90px + 40 * ((100vw - 320px) / 1120));
   font-weight: 700;
   color: #f4edea;
 }
@@ -899,7 +899,7 @@ section .content {
     margin: 0;
     font-size: 40px;
     font-weight: 700;
-    line-height: 1.4em;
+    line-height: 1.2em;
   }
   .stats .main-slider .slide {
     position: relative;
